@@ -5,10 +5,19 @@
 
 def count_file_lines():
     ######################
-    # Add your code here #
+    try:
+        with open('names.txt', 'r') as file:
+            names = file.readlines()
+            name_count = len(names)
+        
+        print(f"The file contains {name_count} name(s).")
+
+    except FileNotFoundError:
+        print("Error: The file 'names.txt' was not found.")
+    except IOError as e:
+        print(f"Error reading file: {e}")
     ######################
     print('In the count_file_lines function')
-
 
 
 # You don't need to change anything below this line:
